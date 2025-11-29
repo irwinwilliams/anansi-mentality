@@ -1,0 +1,132 @@
+/* Custom styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@700&display=swap');
+
+:root {
+    --r-main-font: 'Inter', sans-serif;
+    --r-heading-font: 'Outfit', sans-serif;
+    --r-background-color: #1a1a1a;
+    --r-main-color: #ffffff;
+    --r-heading-color: #ffffff;
+    --r-link-color: #ff9f1c;
+    --r-link-color-hover: #ffbf69;
+    --accent-color: #ff9f1c;
+}
+
+.reveal {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+    text-transform: none;
+    font-weight: 700;
+}
+
+.anansi-title {
+    font-size: 3.5em !important;
+    background: -webkit-linear-gradient(45deg, #ff9f1c, #ffbf69);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-accent {
+    color: var(--accent-color);
+}
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+blockquote {
+    border-left: 4px solid var(--accent-color) !important;
+    padding-left: 1rem !important;
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: none !important;
+}
+
+/* Stats Styles */
+.stats-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.stat-item {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.stat-label {
+    text-align: left;
+    font-size: 0.8em;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.stat-bar-container {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    height: 30px;
+}
+
+.stat-bar {
+    height: 100%;
+    background: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    font-size: 0.7em;
+    font-weight: bold;
+    color: #000;
+    transition: width 1s ease-out;
+}
+
+.stat-bar.accent-2 {
+    background: #ffbf69;
+    /* Lighter accent for the second chart */
+}
+
+.two-col-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    text-align: left;
+}
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.feature-item h3 {
+    font-size: 1.2em;
+    margin-bottom: 0.5rem;
+}
+
+.feature-item p {
+    font-size: 0.9em;
+    margin: 0;
+}
