@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anansi Mentality Presentation</title>
   <link rel="stylesheet" href="/node_modules/reveal.js/dist/reveal.css" />
-  <link rel="stylesheet" href="/node_modules/reveal.js/dist/theme/black.css" />
+  <link rel="stylesheet" href="/node_modules/reveal.js/dist/theme/black.css" id="reveal-theme" />
   <link rel="stylesheet" href="/style.css" />
 </head>
 
@@ -118,11 +118,11 @@
       </section>
 
       <!-- Slide 5: The Concierge Model -->
-      <section>
+       <section>
         <h2>The Concierge Model</h2>
         <div class="r-stack">
           <div class="fragment fade-out" data-fragment-index="0">
-            <h3>TT Connect: The Evolution</h3>
+            <h3>ttconnect: The Evolution</h3>
             <div
               style="position: relative; padding-bottom: 45%; height: 0; overflow: hidden; max-width: 100%; background: #000; margin-bottom: 1rem;">
               <iframe src="https://www.youtube.com/embed/bE8nqbqANJ4?start=206&end=318" title="Evolution Video"
@@ -131,23 +131,17 @@
                 allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
               </iframe>
             </div>
-            <div class="fragment">
+          </div>
+          <div class="fragment">
               <p class="text-accent" style="font-size: 1.2em; font-weight: bold; margin: 0;">15,000 Tickets | 97% CSAT
               </p>
-            </div>
             <p class="fragment" style="font-size: 0.7em; opacity: 0.7; margin-top: 0.5rem;"><em>Limitation: Siloed
                 information. Functional, not conversational.</em></p>
           </div>
-          <div class="fragment current-visible" data-fragment-index="0">
-            <h3>TT Gov Chat</h3>
-            <p>Where you go to get things done.</p>
-          </div>
-          <div class="fragment">
-            <h3>Anansi</h3>
-            <p>The Evolution.</p>
-          </div>
         </div>
       </section>
+
+      
 
       <!-- Slide 6: The Anansi Difference -->
       <section>
@@ -327,7 +321,7 @@
             </blockquote>
           </div>
           <div class="feature-item fragment fade-up" style="font-size: 0.6em;">
-            <p><strong>Dr. Arnold Kavaarpuo</strong></p>
+            <p><strong>Dr. Arnold Kavaarpuo</strong><br />Executive Director; Data Protection Commision, Ghana</p>
             <blockquote style="width: 100%; margin: 0;">
               "Anansi represents wisdom, storytelling, and the power to weave connections... bonds that now extend into
               the digital age."
@@ -356,6 +350,36 @@
       </section>
     </div>
   </div>
+  <!-- Theme Switcher -->
+  <div id="theme-switcher" style="position: fixed; bottom: 20px; left: 20px; z-index: 1000; display: flex; gap: 10px;">
+    <button onclick="setTheme('dark')"
+      style="padding: 8px 16px; border-radius: 20px; border: none; background: #333; color: #fff; cursor: pointer; font-family: 'Inter', sans-serif; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">Dark</button>
+    <button onclick="setTheme('light')"
+      style="padding: 8px 16px; border-radius: 20px; border: none; background: #f0f0f0; color: #333; cursor: pointer; font-family: 'Inter', sans-serif; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">Light</button>
+    <button onclick="setTheme('natural')"
+      style="padding: 8px 16px; border-radius: 20px; border: none; background: #4caf50; color: #fff; cursor: pointer; font-family: 'Inter', sans-serif; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">Natural</button>
+  </div>
+
+  <script>
+    function setTheme(themeName) {
+      const body = document.body;
+      const revealThemeLink = document.getElementById('reveal-theme');
+
+      // Reset classes
+      body.classList.remove('theme-dark', 'theme-light', 'theme-natural');
+
+      // Add new class
+      body.classList.add('theme-' + themeName);
+
+      // Update Reveal.js base theme if needed
+      if (themeName === 'light') {
+        revealThemeLink.href = '/node_modules/reveal.js/dist/theme/white.css';
+      } else {
+        revealThemeLink.href = '/node_modules/reveal.js/dist/theme/black.css';
+      }
+    }
+  </script>
+
   <script type="module">
     import Reveal from 'reveal.js';
     import Markdown from 'reveal.js/plugin/markdown/markdown.esm.js';

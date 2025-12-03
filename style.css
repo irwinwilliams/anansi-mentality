@@ -4,16 +4,50 @@
 :root {
     --r-main-font: 'Inter', sans-serif;
     --r-heading-font: 'Outfit', sans-serif;
-    --r-background-color: #1a1a1a;
-    --r-main-color: #ffffff;
-    --r-heading-color: #ffffff;
-    --r-link-color: #ff9f1c;
-    --r-link-color-hover: #ffbf69;
-    --accent-color: #ff9f1c;
+
+    /* Default (Dark) Theme Variables */
+    --theme-bg-gradient: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    --theme-main-color: #ffffff;
+    --theme-heading-color: #ffffff;
+    --theme-accent-color: #ff9f1c;
+    --theme-accent-color-hover: #ffbf69;
+    --theme-accent-secondary: #ffbf69;
+    --theme-block-bg: rgba(255, 255, 255, 0.05);
+    --theme-stat-bar-bg: rgba(255, 255, 255, 0.1);
+    --theme-stat-text: #000;
+}
+
+/* Light Theme */
+body.theme-light {
+    --theme-bg-gradient: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+    --theme-main-color: #333333;
+    --theme-heading-color: #222222;
+    --theme-accent-color: #d35400;
+    --theme-accent-color-hover: #e67e22;
+    --theme-accent-secondary: #e67e22;
+    --theme-block-bg: rgba(0, 0, 0, 0.05);
+    --theme-stat-bar-bg: rgba(0, 0, 0, 0.1);
+    --theme-stat-text: #fff;
+}
+
+/* Natural Theme (Purple & Green) */
+body.theme-natural {
+    --theme-bg-gradient: linear-gradient(135deg, #2e003e 0%, #3d0052 100%);
+    /* Deep Purple */
+    --theme-main-color: #f0f0f0;
+    --theme-heading-color: #ffffff;
+    --theme-accent-color: #4caf50;
+    /* Green */
+    --theme-accent-color-hover: #81c784;
+    --theme-accent-secondary: #81c784;
+    --theme-block-bg: rgba(255, 255, 255, 0.1);
+    --theme-stat-bar-bg: rgba(255, 255, 255, 0.15);
+    --theme-stat-text: #000;
 }
 
 .reveal {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    background: var(--theme-bg-gradient);
+    color: var(--theme-main-color);
 }
 
 .reveal h1,
@@ -24,18 +58,19 @@
 .reveal h6 {
     text-transform: none;
     font-weight: 700;
+    color: var(--theme-heading-color);
 }
 
 .anansi-title {
     font-size: 3.5em !important;
-    background: -webkit-linear-gradient(45deg, #ff9f1c, #ffbf69);
+    background: -webkit-linear-gradient(45deg, var(--theme-accent-color), var(--theme-accent-secondary));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .text-accent {
-    color: var(--accent-color);
+    color: var(--theme-accent-color);
 }
 
 .two-col {
@@ -45,10 +80,10 @@
 }
 
 blockquote {
-    border-left: 4px solid var(--accent-color) !important;
+    border-left: 4px solid var(--theme-accent-color) !important;
     padding-left: 1rem !important;
     font-style: italic;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--theme-block-bg);
     box-shadow: none !important;
 }
 
@@ -75,7 +110,7 @@ blockquote {
 
 .stat-bar-container {
     width: 100%;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--theme-stat-bar-bg);
     border-radius: 4px;
     overflow: hidden;
     height: 30px;
@@ -83,19 +118,19 @@ blockquote {
 
 .stat-bar {
     height: 100%;
-    background: var(--accent-color);
+    background: var(--theme-accent-color);
     display: flex;
     align-items: center;
     justify-content: flex-end;
     padding-right: 10px;
     font-size: 0.7em;
     font-weight: bold;
-    color: #000;
+    color: var(--theme-stat-text);
     transition: width 1s ease-out;
 }
 
 .stat-bar.accent-2 {
-    background: #ffbf69;
+    background: var(--theme-accent-secondary);
     /* Lighter accent for the second chart */
 }
 
@@ -115,7 +150,7 @@ blockquote {
 }
 
 .feature-item {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--theme-block-bg);
     padding: 1.5rem;
     border-radius: 8px;
     text-align: left;
